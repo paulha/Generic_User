@@ -1,0 +1,98 @@
+name: Daily News Analysis Pipeline
+
+# Run this workflow every day at 6:00 AM UTC (adjust as needed)
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  # Allow manual triggering for testing
+  workflow_dispatch:
+  # Optionally run on push to main branch
+  push:
+    branches:
+      - main
+    paths:
+      - 'scripts/**'
+      - '.github/workflows/**'
+
+jobs:
+  analyze-news:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      # Set up Python for news analysis script
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      # Install Python dependencies
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests python-dotenv anthropic
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      
+      # Run news analysis script
+      - name: Generate news analysis
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python scripts/generate_news_analysis.py
+      
+      # Set up Node.js for React app
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      # Install Node.js dependencies
+      - name: Install Node.js dependencies
+        run: npm install
+      
+      # Build React app
+      - name: Build React app
+        run: npm run build
+      
+      # Archive old news analysis
+      - name: Archive old analysis
+        run: |
+          mkdir -p public/data/archive
+          if [ -f public/data/news-stories.json ]; then
+            cp public/data/news-stories.json public/data/archive/$(date -d "yesterday" +"%Y-%m-%d").json
+          fi
+      
+      # Move new analysis to data directory
+      - name: Move new analysis
+        run: |
+          mv analysis-output.json public/data/news-stories.json
+      
+      # Configure Git
+      - name: Configure Git
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+      
+      # Commit changes
+      - name: Commit changes
+        run: |
+          git add public/data/
+          git commit -m "Update news analysis for $(date +"%Y-%m-%d")" || echo "No changes to commit"
+      
+      # Push changes
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+      
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: build
+          branch: gh-pages
+          clean: true

@@ -2,11 +2,27 @@ import React, { useState } from 'react';
 import { Clock, AlertTriangle, TrendingDown, TrendingUp, Shield, ChevronDown, ChevronRight } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
+interface TimelineData {
+  id: string;
+  time: string;
+  title: string;
+  icon: any; // Or a more specific icon type
+  evidence: string;
+  timeline: string;
+  readability: number;
+  confidence: string; // For 'Very High', 'High', etc.
+  details: string[];
+}
+
+interface TimelineCardProps {
+  data: TimelineData;
+}
+
 const TradeWarTimeline = () => {
-  const [openSections, setOpenSections] = useState({});
+  const [openSections, setOpenSections] = useState<{[key: string]: boolean}>({});
   
-  const toggleSection = (id) => {
-    setOpenSections(prev => ({
+  const toggleSection = (id : string ) => {
+    setOpenSections((prev: Record<string, boolean>) => ({
       ...prev,
       [id]: !prev[id]
     }));
@@ -79,7 +95,7 @@ const TradeWarTimeline = () => {
     }
   ];
 
-  const TimelineCard = ({ data }) => {
+  const TimelineCard = ({ data } : TimelineCardProps ) => {
     const Icon = data.icon;
     const isOpen = openSections[data.id];
     
@@ -119,7 +135,7 @@ const TradeWarTimeline = () => {
           <div className="mt-2 ml-10 bg-gray-50 rounded-lg p-4 border border-gray-200">
             <h5 className="font-semibold text-gray-900 mb-2">Expected Evidence</h5>
             <ul className="list-disc pl-5 space-y-1">
-              {data.details.map((detail, idx) => (
+              {data.details.map((detail: string, idx: number) => (
                 <li key={idx} className="text-sm text-gray-700">{detail}</li>
               ))}
             </ul>

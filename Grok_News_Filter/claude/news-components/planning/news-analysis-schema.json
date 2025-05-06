@@ -1,0 +1,63 @@
+{
+  "stories": [
+    {
+      "id": "vatican", // Unique identifier for each story
+      "title": "What's next for the Vatican?", // Hook-style question title
+      "icon": "Globe", // Icon identifier (matches Lucide React icon names)
+      "summary": "Following Pope Francis's death at 88 on April 21, the largest papal conclave in Catholic Church history begins May 7, with 135 cardinal electors set to choose the 267th Pope - more than the traditional limit of 120. As Trump jokes about becoming Pope, the Vatican has already prepared for the election, installing the iconic chimney on the Sistine Chapel as traditional preparations continue.", // 2-3 sentence overview
+      "analysis": {
+        "truth": [ // Array of verified facts
+          "Pope Francis died April 21, conclave begins May 7 with historic 135 electors",
+          "Vatican officially announced conclave date, with preparations ongoing including chimney installation",
+          "Trump joked about succeeding Pope Francis during comments"
+        ],
+        "falsehoods": [ // Optional array of identified falsehoods
+          "Claims that cardinals are divided along political lines are overblown"
+        ],
+        "gaps": [ // Information missing from coverage
+          "No clear frontrunner has emerged",
+          "The influence of geopolitics on the selection process remains unclear",
+          "Coverage lacks details on how pope's death during Trump's second term might affect US-Vatican relations"
+        ],
+        "negativeEvidence": [ // What's notably absent
+          "Despite previous conclaves featuring factional campaigning, no public divides have emerged"
+        ],
+        "propaganda": [ // Propaganda techniques identified
+          "Vatican coverage shows genuine uncertainty about papal direction, unlike typical election speculation"
+        ]
+      }
+    },
+    {
+      "id": "australia",
+      "title": "Will Albanese's anti-Trump stance help Australia?",
+      "icon": "Vote",
+      "summary": "Australian Prime Minister Anthony Albanese secured re-election on May 3, becoming the first Australian leader in 21 years to win consecutive terms. His campaign deliberately distanced itself from Trump's administration rhetoric, suggesting his government \"boosted its majority by not modeling itself on the Trump administration,\" following a Trump-influenced Canadian election last week.",
+      "analysis": {
+        "truth": [
+          "Albanese won re-election May 3, first consecutive win since 2004",
+          "Albanese positioned himself against Trump's policies, with campaign occurring while Vatican papal transition was underway"
+        ],
+        "falsehoods": [
+          "Reuters headline claiming Albanese \"rode anti-Trump wave\" embellishes the margin - while he won, the language assumes singular causation from Trump opposition"
+        ],
+        "gaps": [
+          "No polling data comparing different factors in Albanese's victory",
+          "Missing analysis of how much Trump's policies influenced Australian voters"
+        ]
+      }
+    }
+  ],
+  "meta": {
+    "analysisDate": "2025-05-05T14:30:00Z",
+    "sources": [
+      {
+        "name": "Reuters",
+        "url": "https://www.reuters.com/world/asia-pacific/albanese-claims-australia-election-victory-riding-anti-trump-wave-2025-05-03/"
+      },
+      {
+        "name": "AP News",
+        "url": "https://apnews.com/article/vatican-pope-conclave-electors-17091445fa0670cb1bd741b3af31365e"
+      }
+    ]
+  }
+}

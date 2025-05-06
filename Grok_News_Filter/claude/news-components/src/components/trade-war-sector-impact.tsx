@@ -2,12 +2,29 @@ import React, { useState } from 'react';
 import { Car, ShoppingBag, Smartphone, Apple, Package, ChevronDown, ChevronRight, AlertTriangle, TrendingDown, TrendingUp, Shield } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar } from 'recharts';
 
+// Define interfaces for component props
+interface Sector {
+  id: string;
+  name: string;
+  icon: any; // Or a more specific type for the icon
+  impact: {
+    [key: string]: number; // For timeframes like 'current', '3mon', etc.
+  };
+  exposure: number;
+  details: string[];
+  color: string;
+}
+
+interface SectorCardProps {
+  sector: Sector;
+  timeframe: string;
+}
 const TradeSectorDashboard = () => {
-  const [openSectors, setOpenSectors] = useState({});
+  const [openSectors, setOpenSectors] = useState<{[key: string]: boolean}>({});
   const [timeframe, setTimeframe] = useState('current');
   
-  const toggleSector = (id) => {
-    setOpenSectors(prev => ({
+  const toggleSector = (id : string ) => {
+    setOpenSectors((prev: Record<string, boolean>) => ({
       ...prev,
       [id]: !prev[id]
     }));
@@ -99,7 +116,7 @@ const TradeSectorDashboard = () => {
     '12mon': '12-Month Projection (May 2026)'
   };
 
-  const getImpactColor = (value) => {
+  const getImpactColor = (value : number ) => {
     if (value > 2) return 'text-green-600';
     if (value > 0) return 'text-green-500';
     if (value > -2) return 'text-yellow-600';
@@ -107,13 +124,13 @@ const TradeSectorDashboard = () => {
     return 'text-red-600';
   };
 
-  const getIcon = (value) => {
+  const getIcon = (value : number ) => {
     if (value > 0) return TrendingUp;
     if (value < -5) return AlertTriangle;
     return TrendingDown;
   };
 
-  const SectorCard = ({ sector, timeframe }) => {
+  const SectorCard = ({ sector, timeframe } : SectorCardProps) => {
     const Icon = sector.icon;
     const ImpactIcon = getIcon(sector.impact[timeframe]);
     const isOpen = openSectors[sector.id];

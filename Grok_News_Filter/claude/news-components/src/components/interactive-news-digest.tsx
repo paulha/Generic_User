@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { ChevronDown, ChevronRight, AlertTriangle, Globe, DollarSign, Vote } from 'lucide-react';
 
 const NewsDigest = () => {
-  const [openSections, setOpenSections] = useState({});
+  const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({});
   
-  const toggleSection = (id) => {
+  const toggleSection = (id : string ) => {
     setOpenSections(prev => ({
       ...prev,
       [id]: !prev[id]
@@ -93,7 +93,22 @@ const NewsDigest = () => {
     }
   ];
 
-  const NewsSection = ({ story }) => {
+  interface Story {
+  id: string;
+  title: string;
+  icon: any; // Or the specific icon type
+  summary: string;
+  analysis: {
+    truth?: string[];
+    falsehoods?: string[];
+    gaps?: string[];
+    negativeEvidence?: string[];
+    propaganda?: string[];
+  }
+}
+
+
+  const NewsSection = ({ story } : { story : Story} ) => {
     const Icon = story.icon;
     const isOpen = openSections[story.id];
     
