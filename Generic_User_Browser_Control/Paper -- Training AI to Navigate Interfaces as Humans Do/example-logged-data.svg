@@ -1,0 +1,55 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f9f9f9"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle">Example Logged Data Structure</text>
+  <text x="400" y="65" font-family="Arial" font-size="16" text-anchor="middle" fill="#555">For Login Process Interaction</text>
+  
+  <!-- Main Data Structure Box -->
+  <rect x="50" y="90" width="700" height="350" rx="8" fill="white" stroke="#673ab7" stroke-width="2"/>
+  
+  <!-- Session Container -->
+  <rect x="70" y="110" width="660" height="310" rx="5" fill="#f3e5f5" stroke="#673ab7" stroke-width="1"/>
+  <text x="400" y="130" font-family="Courier New" font-size="14" font-weight="bold" text-anchor="middle" fill="#4a148c">SESSION: login_example_001</text>
+  
+  <!-- Page State -->
+  <rect x="90" y="145" width="620" height="25" rx="3" fill="#e3f2fd" stroke="#2196f3" stroke-width="1"/>
+  <text x="100" y="162" font-family="Courier New" font-size="12" text-anchor="start" fill="#0d47a1">start_url: "example.com/login", timestamp: "2025-05-06T13:45:22.000Z"</text>
+  
+  <!-- Interaction Sequence -->
+  <rect x="90" y="180" width="620" height="220" rx="3" fill="#ede7f6" stroke="#673ab7" stroke-width="1"/>
+  <text x="400" y="200" font-family="Courier New" font-size="14" font-weight="bold" text-anchor="middle" fill="#4a148c">Interactions:</text>
+  
+  <!-- Username Click -->
+  <rect x="110" y="215" width="580" height="20" rx="2" fill="#f1f8e9" stroke="#aed581" stroke-width="1"/>
+  <text x="120" y="230" font-family="Courier New" font-size="11" text-anchor="start" fill="#33691e">{id: "i1", type: "click", element: {type: "input", id: "username"}, ...}</text>
+  
+  <!-- Username Type -->
+  <rect x="110" y="240" width="580" height="20" rx="2" fill="#f1f8e9" stroke="#aed581" stroke-width="1"/>
+  <text x="120" y="255" font-family="Courier New" font-size="11" text-anchor="start" fill="#33691e">{id: "i2", type: "type", value: "user123", element_ref: "i1", ...}</text>
+  
+  <!-- Password Click -->
+  <rect x="110" y="265" width="580" height="20" rx="2" fill="#f1f8e9" stroke="#aed581" stroke-width="1"/>
+  <text x="120" y="280" font-family="Courier New" font-size="11" text-anchor="start" fill="#33691e">{id: "i3", type: "click", element: {type: "input", id: "password"}, ...}</text>
+  
+  <!-- Password Type -->
+  <rect x="110" y="290" width="580" height="20" rx="2" fill="#f1f8e9" stroke="#aed581" stroke-width="1"/>
+  <text x="120" y="305" font-family="Courier New" font-size="11" text-anchor="start" fill="#33691e">{id: "i4", type: "type", value: "[MASKED]", element_ref: "i3", ...}</text>
+  
+  <!-- Submit Click -->
+  <rect x="110" y="315" width="580" height="20" rx="2" fill="#f1f8e9" stroke="#aed581" stroke-width="1"/>
+  <text x="120" y="330" font-family="Courier New" font-size="11" text-anchor="start" fill="#33691e">{id: "i5", type: "click", element: {type: "button", id: "submit"}, ...}</text>
+  
+  <!-- Form Submit Data -->
+  <rect x="110" y="340" width="580" height="50" rx="2" fill="#dcedc8" stroke="#aed581" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="120" y="355" font-family="Courier New" font-size="11" text-anchor="start" fill="#33691e">{id: "s1", type: "submit", form: "login_form", fields: {username: "user123",</text>
+  <text x="120" y="370" font-family="Courier New" font-size="11" text-anchor="start" fill="#33691e"> password: "[MASKED]"}, timestamp: "13:45:32.962", outcome: {next_url: "..."}</text>
+  <text x="120" y="385" font-family="Courier New" font-size="11" text-anchor="start" fill="#33691e"> // Additional fields include success status and response content</text>
+  
+  <!-- Annotations -->
+  <!-- Interaction Reference -->
+  <rect x="50" y="455" width="700" height="35" rx="5" fill="white" stroke="#673ab7" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="400" y="475" font-family="Arial" font-size="12" text-anchor="middle" fill="#4a148c">Interactions track: element references, timestamps, sequential operations, and action outcomes</text>
+  <text x="400" y="490" font-family="Arial" font-size="12" text-anchor="middle" fill="#4a148c">Submit events provide transaction boundaries and success/failure indicators</text>
+</svg>
