@@ -1,5 +1,5 @@
 # The Generic User Approach: Training AI to Navigate Interfaces as Humans Do
-#### Paul Hanchett with assistance from Anthropic Claude 
+> #### *Paul Hanchett with assistance from Anthropic Claude*
 
 ## Abstract
 

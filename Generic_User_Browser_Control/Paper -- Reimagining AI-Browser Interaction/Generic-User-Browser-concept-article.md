@@ -1,4 +1,5 @@
 # The Generic User Approach: Reimagining AI-Browser Interaction
+> #### *Paul Hanchett with assistance from Anthropic Claude*
 
 ## Introduction
 
