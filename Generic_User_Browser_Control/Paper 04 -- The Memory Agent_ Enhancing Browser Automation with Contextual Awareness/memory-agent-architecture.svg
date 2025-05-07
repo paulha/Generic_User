@@ -1,0 +1,108 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f9f9f9"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle">Memory Agent Architecture</text>
+  <text x="400" y="65" font-family="Arial" font-size="16" text-anchor="middle" fill="#555">Integration with Generic User Framework</text>
+  
+  <!-- Main Components -->
+  <!-- Domain Specialist -->
+  <rect x="50" y="150" width="180" height="100" rx="10" fill="#e3f2fd" stroke="#2196f3" stroke-width="2"/>
+  <text x="140" y="180" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#0d47a1">Domain</text>
+  <text x="140" y="200" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#0d47a1">Specialist</text>
+  <text x="140" y="230" font-family="Arial" font-size="12" text-anchor="middle" fill="#0d47a1">(Task Knowledge)</text>
+  
+  <!-- Browser Interaction Specialist -->
+  <rect x="570" y="150" width="180" height="100" rx="10" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+  <text x="660" y="180" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#1b5e20">Browser</text>
+  <text x="660" y="200" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#1b5e20">Interaction</text>
+  <text x="660" y="220" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#1b5e20">Specialist</text>
+  
+  <!-- Browser -->
+  <rect x="570" y="350" width="180" height="70" rx="5" fill="#e0f7fa" stroke="#006064" stroke-width="2"/>
+  <text x="660" y="390" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#006064">Browser</text>
+  
+  <!-- Memory Agent -->
+  <rect x="310" y="150" width="180" height="270" rx="10" fill="#f3e5f5" stroke="#673ab7" stroke-width="2.5"/>
+  <text x="400" y="180" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#4a148c">Memory Agent</text>
+  
+  <!-- Memory Tiers -->
+  <!-- Short-term Memory -->
+  <rect x="330" y="200" width="140" height="50" rx="5" fill="#ede7f6" stroke="#673ab7" stroke-width="1.5"/>
+  <text x="400" y="230" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#4a148c">Short-term Memory</text>
+  
+  <!-- Medium-term Memory -->
+  <rect x="330" y="260" width="140" height="50" rx="5" fill="#d1c4e9" stroke="#673ab7" stroke-width="1.5"/>
+  <text x="400" y="290" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#4a148c">Medium-term Memory</text>
+  
+  <!-- Long-term Memory -->
+  <rect x="330" y="320" width="140" height="50" rx="5" fill="#b39ddb" stroke="#673ab7" stroke-width="1.5"/>
+  <text x="400" y="350" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#4a148c">Long-term Memory</text>
+  
+  <!-- Memory Operations -->
+  <rect x="330" y="380" width="140" height="30" rx="5" fill="#9575cd" stroke="#673ab7" stroke-width="1"/>
+  <text x="400" y="400" font-family="Arial" font-size="10" text-anchor="middle" fill="white">Memory Operations</text>
+  
+  <!-- Communication Lines -->
+  <!-- Domain to Memory -->
+  <path d="M 230 170 L 310 170" fill="none" stroke="#2196f3" stroke-width="2"/>
+  <polygon points="305,165 315,170 305,175" fill="#2196f3"/>
+  
+  <path d="M 310 230 L 250 210" fill="none" stroke="#2196f3" stroke-width="2" stroke-dasharray="5,3"/>
+  <polygon points="255,205 240,205 250,215" fill="#2196f3"/>
+  
+  <!-- Memory to Browser Interaction -->
+  <path d="M 490 170 L 570 170" fill="none" stroke="#4caf50" stroke-width="2"/>
+  <polygon points="565,165 575,170 565,175" fill="#4caf50"/>
+  
+  <path d="M 570 230 L 490 230" fill="none" stroke="#4caf50" stroke-width="2" stroke-dasharray="5,3"/>
+  <polygon points="495,225 485,230 495,235" fill="#4caf50"/>
+  
+  <!-- Browser Interaction to Browser -->
+  <path d="M 660 250 L 660 350" fill="none" stroke="#006064" stroke-width="2"/>
+  <polygon points="655,345 660,360 665,345" fill="#006064"/>
+  
+  <!-- Memory to Memory -->
+  <path d="M 400 250 L 400 260" fill="none" stroke="#673ab7" stroke-width="1"/>
+  <polygon points="395,255 400,265 405,255" fill="#673ab7"/>
+  
+  <path d="M 400 310 L 400 320" fill="none" stroke="#673ab7" stroke-width="1"/>
+  <polygon points="395,315 400,325 405,315" fill="#673ab7"/>
+  
+  <path d="M 400 370 L 400 380" fill="none" stroke="#673ab7" stroke-width="1"/>
+  <polygon points="395,375 400,385 405,375" fill="#673ab7"/>
+
+  <!-- Memory Sidebar -->
+  <rect x="80" y="350" width="120" height="70" rx="5" fill="#f3e5f5" stroke="#673ab7" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="140" y="375" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#4a148c">Contextual</text>
+  <text x="140" y="395" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#4a148c">Recall</text>
+  
+  <!-- Memory to Sidebar -->
+  <path d="M 330 345 L 200 375" fill="none" stroke="#673ab7" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <polygon points="205,370 190,375 205,380" fill="#673ab7"/>
+  
+  <!-- Legend -->
+  <rect x="50" y="450" width="700" height="40" rx="5" fill="white" stroke="#757575" stroke-width="1.5"/>
+  <text x="60" y="475" font-family="Arial" font-size="12" font-weight="bold" text-anchor="start">Legend:</text>
+  
+  <!-- Domain Specialist -->
+  <rect x="130" y="460" width="15" height="15" rx="2" fill="#e3f2fd" stroke="#2196f3" stroke-width="1"/>
+  <text x="155" y="473" font-family="Arial" font-size="11" text-anchor="start">Domain Specialist</text>
+  
+  <!-- Browser Interaction -->
+  <rect x="260" y="460" width="15" height="15" rx="2" fill="#e8f5e9" stroke="#4caf50" stroke-width="1"/>
+  <text x="285" y="473" font-family="Arial" font-size="11" text-anchor="start">Browser Interaction</text>
+  
+  <!-- Memory Agent -->
+  <rect x="410" y="460" width="15" height="15" rx="2" fill="#f3e5f5" stroke="#673ab7" stroke-width="1.5"/>
+  <text x="435" y="473" font-family="Arial" font-size="11" text-anchor="start">Memory Components</text>
+  
+  <!-- Communication -->
+  <line x1="510" y1="468" x2="535" y2="468" stroke="#000000" stroke-width="1.5"/>
+  <text x="545" y="473" font-family="Arial" font-size="11" text-anchor="start">Direct Communication</text>
+  
+  <!-- Feedback -->
+  <line x1="635" y1="468" x2="660" y2="468" stroke="#000000" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <text x="670" y="473" font-family="Arial" font-size="11" text-anchor="start">Contextual Feedback</text>
+</svg>
