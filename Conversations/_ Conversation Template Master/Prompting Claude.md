@@ -1,5 +1,7 @@
 # Claude prompting guide
 
+> Note: See also https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices
+
 ## General tips for effective prompting
 
 ### 1. Be clear and specific
