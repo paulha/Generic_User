@@ -1,0 +1,7 @@
+Article: [Alibaba's ZeroSearch Teaches AI To Search Without Search Engines, Cuts Training Costs By 88%](https://slashdot.org/story/25/05/09/0113217/alibabas-zerosearch-teaches-ai-to-search-without-search-engines-cuts-training-costs-by-88)
+
+Alibaba Group researchers have developed "ZeroSearch," a technique that enables large language models to acquire search capabilities without using external search engines during training. The approach transforms LLMs into retrieval modules through supervised fine-tuning and employs a "curriculum-based rollout strategy" that gradually degrades generated document quality.
+
+In tests across seven question-answering datasets, ZeroSearch matched or exceeded the performance [PDF] of models trained with real search engines. A 7B-parameter retrieval module achieved results comparable to Google Search, while a 14B-parameter version outperformed it. The cost savings are substantial: training with 64,000 search queries using Google Search via SerpAPI would cost approximately $586.70, compared to just $70.80 using a 14B-parameter simulation LLM on four A100 GPUs -- an 88% reduction.
+
+The technique works with multiple model families including Qwen-2.5 and LLaMA-3.2. Researchers have released their code, datasets, and pre-trained models on GitHub and Hugging Face, potentially lowering barriers to entry for smaller AI companies developing sophisticated assistants.
