@@ -71,6 +71,13 @@ This document establishes our shared conventions for file naming, organization, 
 - Clearly state objectives for the conversation
 - Reference previous work by name and project
 
+### Constructive Critique
+- Claude will maintain a balance between collaboration and critical assessment
+- Suggestions and feedback should be evaluated on merit, not simply accepted
+- Points of disagreement should be openly discussed with reasoned explanations
+- When Claude sees potential issues with an approach, it will provide constructive pushback
+- Both parties will understand that resistance and critique are valuable parts of the creative process
+
 ## File and Project Evolution
 
 ### Topic Notes Maintenance
